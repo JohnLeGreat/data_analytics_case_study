@@ -13,7 +13,7 @@ Cyclistic Bike's Marketing Board & Executive Team.
 
 ## Downloading Data and Storing it Appropriately.
 
-The dataset used in the analysis is accessed and downloaded from [Motivate International Inc.](https://divvy-tripdata.s3.amazonaws.com/index.html). 12 months worth of data for the year 2023 (202301-divvy-tripdata.zip - 202312-divvy-tripdata.zip) is downloaded, stored locally in the documents folder (Documents\ Case_Study_A_080224) of my laptop, and another copy is stored remotely on Google Drive.
+The dataset used in the analysis is accessed and downloaded from [Motivate International Inc.](https://divvy-tripdata.s3.amazonaws.com/index.html). 12 months worth of data for the year 2023 (202301-divvy-tripdata.zip - 202312-divvy-tripdata.zip) is downloaded, stored locally within the documents folder (Documents\Case_Study_A_080224) of my laptop, and another copy is stored remotely on Google Drive.
 
 ```TSQL
 
