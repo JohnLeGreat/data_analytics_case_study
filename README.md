@@ -11,4 +11,17 @@ Cyclistic Bike's Marketing Board & Executive Team.
 
 # Prepare
 
+## Downloading Data and Storing it Appropriately.
 
+The dataset used in the analysis is accessed and downloaded from [Motivate International Inc.](https://divvy-tripdata.s3.amazonaws.com/index.html). 12 months worth of Data is downloaded, stored locally in the documents folder (Documents\Case_Study_A_080224) of my laptop, and another cody is stored remotely on Google Drive.
+
+```TSQL
+
+install.packages("tidyverse")
+install.packages("lubridate")
+install.packages("janitor")
+
+library (tidyverse)
+library (lubridate)
+library (janitor)
+```
