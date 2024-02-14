@@ -198,4 +198,24 @@ spc_tbl_ [224,073 × 13] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
  - attr(*, "problems")=<externalptr> 
 
 ```
+To merge multiple data frames into a single data frame, merged_df2023 with the date starting 01-01-2023 and ending 31-12-2023, we will be utilizing the rbind() function.
 
+```TSQL
+
+merged_df2023 <- rbind(Jan2023, Feb2023, Mar2023, Apr2023, May2023, Jun2023, Jul2023, Aug2023, Sep2023, Oct2023, Nov2023, Dec2023)
+
+```
+## Document the Cleaning Process
+
+For data cleaning prior to our next Analyses step, we will need to utilize the janitor library, namely the clean_names () and remove_empty() function, which function is to clean data frames names for consistency and to remove empty rows or columns, respectively.
+
+```TSQL
+
+merged_df2023 <- clean_names (merged_df2023)
+
+merged_df2023 <- remove_empty (merged_df2023, which = c("rows","cols"))
+
+```
+# Analyse
+
+## Aggregate your data so it's useful and accessible.
