@@ -297,3 +297,9 @@ The following output in recorded:
 [1] 7
 ```
 From the results, we know that Cyclistic Bikes get used the most on Saturdays.
+
+## Idenfity Trends and Relationships
+
+I have made the following observations:
+1. Casual riders tend to use Cyclistic bikes for a longer duration than annual riders on average,
+2. Cyclistic Bikes mark higher amounts of utilization on Fridays, Saturdays and Sundays compared to Mondays, Tuesdays, Wednesdays and Thursdays.
