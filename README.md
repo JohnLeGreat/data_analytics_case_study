@@ -242,4 +242,58 @@ T0 get the starting hour, we will be utilizing the format(as.POSIXct()) function
 ```TSQL
 starting_hour <- format(as.POSIXct(merged_df2023$started_at), '%m')
 ```
+## Perform some calculations
 
+To calculate and tabulate the mean of ride_length and max of ride_length, for the annual member and casual rider groups respectively, we will be using the mean() and max() function respectively, grouped by member_casual.
+```TSQL
+merged_df2023 %>%
+  group_by (member_casual) %>%
+  summarise (ave_ride_length = mean(ride_length), max_ride_length = max (ride_length))
+```
+The following output is recorded:
+```TSQL
+# A tibble: 2 × 3
+  member_casual ave_ride_length max_ride_length
+  <chr>         <drtn>          <drtn>         
+1 casual        28.22453 mins   98489.067 mins 
+2 member        12.51317 mins    1559.667 mins 
+```
+From the data, we know that on average, casual riders tend to use Cylistic Bikes for a longer duration of time then the annual members.
+
+To calculate and tabulate the mean of ride_length and max of ride_length, for each day of the week, we will be using the mean() and max() function respectively, grouped by day_of_week.
+```TSQL
+merged_df2023 %>%
+  group_by (day_of_week) %>%
+  summarise (ave_ride_length = mean(ride_length), max_ride_length = max (ride_length))
+```
+The following output is recorded:
+```TSQL
+# A tibble: 2 × 3
+ day_of_week ave_ride_length max_ride_length
+        <dbl> <drtn>          <drtn>         
+1           1 22.40607 mins   62867.10 mins  
+2           2 16.99238 mins   83382.58 mins  
+3           3 15.92316 mins   64171.70 mins  
+4           4 15.60619 mins   98489.07 mins  
+5           5 16.01644 mins   92569.92 mins  
+6           6 17.94457 mins   79775.02 mins  
+7           7 22.39733 mins   64009.25 mins  
+```
+From the data, we know that on average, Cyclistic Bikes tend to get used more often on the weekends, namely Fridays, Saturdays and Sundays, recording on average 17.94, 22.39 and 22.40 mins respectively.
+
+To calculate the mode of day_of_week, we will be utilizing the following code chunk.
+```TSQL
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+weekday_mode <- getmode(merged_df2023$day_of_week)
+
+print(weekday_mode)
+```
+The following output in recorded:
+```TSQL
+[1] 7
+```
+From the results, we know that Cyclistic Bikes get used the most on Saturdays.
