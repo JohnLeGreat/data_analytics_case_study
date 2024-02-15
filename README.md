@@ -220,6 +220,10 @@ merged_df2023 <- remove_empty (merged_df2023, which = c("rows","cols"))
 
 ## Aggregate your Data so it's Useful and Accessible
 
+With the current information available, aggregration is only possible at the ride-level.
+
+## Organize and Format your Data
+
 To get the day of the week of where the trips have occurred, we will be utilizing the wday() function.
 
 ```TSQL
@@ -298,8 +302,39 @@ The following output in recorded:
 ```
 From the results, we know that Cyclistic Bikes get used the most on Saturdays.
 
+To calculate the mean and max of ride_length by annual members / casual riders, grouped by date_of_week, we will be utilizing the following code chunk.
+```TSQL
+merged_df2023 %>%
+  group_by (member_casual, day_of_week) %>%
+  summarise (ave_ride_length = mean(ride_length), max_ride_length = max (ride_length))
+```
+The following output is recorded:
+```TSQL
+# A tibble: 14 × 4
+# Groups:   member_casual [2]
+   member_casual day_of_week ave_ride_length max_ride_length
+   <chr>               <dbl> <drtn>          <drtn>         
+ 1 casual                  1 32.75759 mins   62867.100 mins 
+ 2 casual                  2 27.71351 mins   83382.583 mins 
+ 3 casual                  3 25.08331 mins   64171.700 mins 
+ 4 casual                  4 24.26050 mins   98489.067 mins 
+ 5 casual                  5 24.72495 mins   92569.917 mins 
+ 6 casual                  6 27.26078 mins   79775.017 mins 
+ 7 casual                  7 32.13722 mins   64009.250 mins 
+ 8 member                  1 13.90636 mins    1500.517 mins 
+ 9 member                  2 11.90192 mins    1499.933 mins 
+10 member                  3 12.01257 mins    1499.933 mins 
+11 member                  4 11.92927 mins    1499.933 mins 
+12 member                  5 12.01938 mins    1499.950 mins 
+13 member                  6 12.47812 mins    1499.950 mins 
+14 member                  7 13.93769 mins    1559.667 mins 
+```
+From the results, we can note that casual riders utilize Cyclistic Bikes almost twice the time as annual members, and there is increased usage during the weekends, namely Fridays, Saturdays and Sundays. 
+The utilization of Cyclistic Bikes by annual members remain fairly consistent through days of the week.
+
 ## Idenfity Trends and Relationships
 
 I have made the following observations:
-1. Casual riders tend to use Cyclistic bikes for a longer duration than annual riders on average,
-2. Cyclistic Bikes mark higher amounts of utilization on Fridays, Saturdays and Sundays compared to Mondays, Tuesdays, Wednesdays and Thursdays.
+1. Casual riders tend to use Cyclistic bikes for a longer duration than annual riders on average, recording 28.22453 mins and 12.51317 mins respectively, having a 15.71 mins difference, more than double the time.
+2. Cyclistic Bikes mark higher amounts of utilization by casual riders on Fridays, Saturdays and Sundays compared to on Mondays, Tuesdays, Wednesdays and Thursdays.
+3. SUndays are a peak period for Cyclistic Bike utilization by casual riders, recording 32.76 mins of average bike time.
