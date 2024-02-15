@@ -218,4 +218,28 @@ merged_df2023 <- remove_empty (merged_df2023, which = c("rows","cols"))
 ```
 # Analyse
 
-## Aggregate your data so it's useful and accessible.
+## Aggregate your Data so it's Useful and Accessible
+
+To get the day of the week of where the trips have occurred, we will be utilizing the wday() function.
+
+```TSQL
+day_of_week <- wday(merged_df2023$started_at)
+```
+To get the trip duration / ride length, we will be utilizing the difftime () function.
+
+```TSQL
+ride_length <- difftime(merged_df2023$ended_at, merged_df2023$started_at, unit ="min")
+```
+
+To get the month of the year of where the trips have occurred, we will be utilizing the format(as.Date()) function.
+
+```TSQL
+month <- format(as.Date(merged_df2023$started_at), '%m')
+```
+
+T0 get the starting hour, we will be utilizing the format(as.POSIXct()) function.
+
+```TSQL
+starting_hour <- format(as.POSIXct(merged_df2023$started_at), '%m')
+```
+
