@@ -227,24 +227,24 @@ With the current information available, aggregration is only possible at the rid
 To get the day of the week of where the trips have occurred, we will be utilizing the wday() function.
 
 ```TSQL
-day_of_week <- wday(merged_df2023$started_at)
+merged_df2023$day_of_week <- wday(merged_df2023$started_at, label = T, abbr = T)
 ```
 To get the trip duration / ride length, we will be utilizing the difftime () function.
 
 ```TSQL
-ride_length <- difftime(merged_df2023$ended_at, merged_df2023$started_at, unit ="min")
+merged_df2023$ride_length <- difftime(merged_df2023$ended_at, merged_df2023$started_at, unit ="min")
 ```
 
 To get the month of the year of where the trips have occurred, we will be utilizing the format(as.Date()) function.
 
 ```TSQL
-month <- format(as.Date(merged_df2023$started_at), '%m')
+merged_df2023$month <- format(as.Date(merged_df2023$started_at), '%m')
 ```
 
 T0 get the starting hour, we will be utilizing the format(as.POSIXct()) function.
 
 ```TSQL
-starting_hour <- format(as.POSIXct(merged_df2023$started_at), '%m')
+merged_df2023$starting_hour <- format(as.POSIXct(merged_df2023$started_at), '%m')
 ```
 ## Perform some calculations
 
@@ -343,7 +343,47 @@ I have made the following observations:
 
 ## Determine the Best way to Share your Findings
 
+I am using the ggplot data visualisation package in RStudio for presentation of my findings.
+
 ## Create Effective Data Visualisations
+
+I will be firstly visualize the number of trips taken by annual members and casual riders, side-by-side, for each day of the week utilizing the following code chunk.
+
+```TSQL
+options(scipen = 999)
+ggplot(data = merged_df2023) +
+  aes(x = day_of_week, fill = member_casual) +
+  geom_bar(position = 'dodge') +
+  labs(x = 'Day of week', y = 'Number of rides', fill = 'Member type', title = 'Number of rides by member type')
+```
+The following output is recorded:
+![number_of_rides_by_member_type](https://github.com/JohnLeGreat/data_analytics_case_study/assets/159614115/1600f20e-426f-430a-9c97-b64982df8b1a)
+
+Next, we will visualize the number of trips taken by annual members and casual riders, side-by-side, for each month of the year utilizing the following code chunk.
+```TSQL
+ggplot(data = cleaned_df2023) +
+  aes(x = month, fill = member_casual) +
+  geom_bar(position = 'dodge') +
+  labs(x = 'Month', y = 'Number of rides', fill = 'Member type', title = 'Number of Rides per Month')
+ggsave("number_of_rides_per_month.png")
+```
+The following output is recorded:
+![number_of_rides_per_month](https://github.com/JohnLeGreat/data_analytics_case_study/assets/159614115/1cc4437a-6aa6-4a65-841d-13f0bfb5c435)
+
+Lastly, we will visualize the hourly use (24-hour format) of Cyclistic bikes by annual members and casual riders, side-by-side, for each day of the week utilizing the following code chunk.
+```TSQL
+ggplot(data = cleaned_df2023) +
+  aes(x = starting_hour, fill = member_casual) +
+  facet_wrap(~day_of_week) +
+  geom_bar(position = 'dodge') +
+  labs(x = 'Starting hour', y = 'Number of rides', fill = 'Member type', title = 'Hourly Use of Bikes throughout the Week') +
+  theme(axis.text = element_text(size = 5))
+ggsave("Hourly_use_of_bikes_throughout_the_week.png", dpi = 1000)
+```
+
+The following output is recorded:
+![Hourly_use_of_bikes_throughout_the_week](https://github.com/JohnLeGreat/data_analytics_case_study/assets/159614115/51ca9d85-495a-4bda-afeb-013f9cf8bb0c)
+
 
 ## Present your Findings
 
