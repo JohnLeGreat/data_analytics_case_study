@@ -347,6 +347,18 @@ I am using the ggplot data visualisation package in RStudio for presentation of 
 
 ## Create Effective Data Visualisations
 
+I will be tabulating the amount of annual members versus casual riders, then visualizing them in a pie chart with the following code chunk.
+```TSQL
+rider_type_count <- table(cleaned_df2023$member_casual)
+View(rider_type_count)
+```
+The following output is recorded:
+```TSQL
+Annual members : 3659987
+Casual riders : 2058621
+```
+
+
 I will be firstly visualize the number of trips taken by annual members and casual riders, side-by-side, for each day of the week utilizing the following code chunk.
 
 ```TSQL
