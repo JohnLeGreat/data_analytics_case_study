@@ -335,6 +335,25 @@ The utilization of Cyclistic Bikes by annual members remain fairly consistent th
 ## Idenfity Trends and Relationships
 
 I have made the following observations:
-1. Casual riders tend to use Cyclistic bikes for a longer duration than annual riders on average, recording 28.22453 mins and 12.51317 mins respectively, having a 15.71 mins difference, more than double the time.
+1. Casual riders tend to use Cyclistic bikes for a longer duration than annual riders on average, recording 28.22453 mins and 12.51317 mins respectively, having a 15.71 mins difference, which was more than double the time.
 2. Cyclistic Bikes mark higher amounts of utilization by casual riders on Fridays, Saturdays and Sundays compared to on Mondays, Tuesdays, Wednesdays and Thursdays.
-3. SUndays are a peak period for Cyclistic Bike utilization by casual riders, recording 32.76 mins of average bike time.
+3. Sundays are a peak period for Cyclistic Bike utilization by casual riders, recording 32.76 mins of average bike time.
+
+# Share
+
+## Determine the Best way to Share your Findings
+
+## Create Effective Data Visualisations
+
+## Present your Findings
+
+## Ensure your Work is Accessible
+
+# Act
+
+## Create your Portfolio
+
+## Add your Case Study
+
+## Practice Presenting Your Case Study to a Friend or a Family Member
+
