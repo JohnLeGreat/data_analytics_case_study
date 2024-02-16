@@ -347,15 +347,17 @@ I am using the ggplot data visualisation package in RStudio for presentation of 
 
 ## Create Effective Data Visualisations
 
-I will be tabulating the amount of annual members versus casual riders, then visualizing them in a pie chart with the following code chunk.
+I will be amounting up the number annual members and casual riders.
 ```TSQL
-rider_type_count <- table(cleaned_df2023$member_casual)
-View(rider_type_count)
+type_count <- cleaned_df2023 %>% count (member_casual)
 ```
 The following output is recorded:
 ```TSQL
-Annual members : 3659987
-Casual riders : 2058621
+# A tibble: 2 × 2
+  member_casual       n
+  <chr>           <int>
+1 casual        2058621
+2 member        3659987
 ```
 
 
