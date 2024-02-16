@@ -349,7 +349,7 @@ I am using the ggplot data visualisation package in RStudio for presentation of 
 
 I will be amounting up the number annual members and casual riders.
 ```TSQL
-type_count <- cleaned_df2023 %>% count (member_casual)
+cleaned_df2023 %>% count (member_casual)
 ```
 The following output is recorded:
 ```TSQL
