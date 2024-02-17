@@ -437,7 +437,7 @@ Documentation of my work is fully accessible on Github.com.
 ## Answering the Business Question
 From the data, we can see that Annual members tend to utilize Cyclistic bikes more for work-related purposes, as evident by their longer and more frequent usage during the weekdays; Casual members tend to use Cyclistic bikes more for sightseeing and travelling purposes, as evident by their peak usage during the weekends (Saturday and Sunday).
 
-For devising a marketing strategy, focused advertisement campaigns can be considered done on the most popular stations (XX) during 1. the afternoon hours (12 - 4 pm), 2. the weekends (Saturday & Sunday) and/or 2. the summer months (June-August), where numbers of Casual riders peak.
+For devising a marketing strategy, focused advertisement campaigns can be considered done on the most popular stations (XX) during 1. the afternoon hours (12 - 4 pm), 2. the weekends (Saturday & Sunday) and/or 3. the summer months (June-August), where numbers of Casual riders peak.
 ## Create your Portfolio
 
 ## Add your Case Study
