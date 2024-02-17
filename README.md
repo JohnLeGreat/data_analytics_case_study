@@ -359,9 +359,25 @@ The following output is recorded:
 1 casual        2058621
 2 member        3659987
 ```
+Then, I will visualize them in a pie chart to access the percentages of annual members to casual riders.
+```TSQL
+numbers <- c(2058621, 3659987)
+types <- c("Casual riders", "Annual members")
 
+piepercent <- round(100 * numbers / sum(numbers), 1)
 
-I will be firstly visualize the number of trips taken by annual members and casual riders, side-by-side, for each day of the week utilizing the following code chunk.
+pie(numbers, labels = paste0(piepercent, "%"), 
+    main = "Number of Annual Members to Casual Riders \ 
+in the year 2023 by Percentage", col = rainbow(length(numbers)))
+legend("topright", c("Casual riders", "Annual members"),
+                    cex = 0.75, fill = rainbow(length(numbers)))
+```
+The following output is recorded:
+![Pie chart](https://github.com/JohnLeGreat/data_analytics_case_study/assets/159614115/8872fd84-e884-4cd1-98bf-47858ce63e30)
+
+From the pie chart, we can clearly see that Annual Members account for almost two thirds of total Cyclistic Bike users for the year 2023.
+
+Next, I will visualize the number of trips taken by annual members and casual riders, side-by-side, for each day of the week utilizing the following code chunk.
 
 ```TSQL
 options(scipen = 999)
@@ -373,6 +389,8 @@ ggplot(data = merged_df2023) +
 The following output is recorded:
 ![number_of_rides_by_member_type](https://github.com/JohnLeGreat/data_analytics_case_study/assets/159614115/1600f20e-426f-430a-9c97-b64982df8b1a)
 
+From the bar graph, we can see that Cyclistic bike usage for Annual members is higher and is fairly consistent on weekdays, and drops on Saturdays and Sundays, whereas Cyclistic bike usage for Casual riders is consistently lower on weekdays, and spikes on Saturdays and Sundays.
+
 Next, we will visualize the number of trips taken by annual members and casual riders, side-by-side, for each month of the year utilizing the following code chunk.
 ```TSQL
 ggplot(data = cleaned_df2023) +
@@ -383,6 +401,8 @@ ggsave("number_of_rides_per_month.png")
 ```
 The following output is recorded:
 ![number_of_rides_per_month](https://github.com/JohnLeGreat/data_analytics_case_study/assets/159614115/1cc4437a-6aa6-4a65-841d-13f0bfb5c435)
+
+From the bar graph, we can know that Annual members and Casual riders tend to utilize Cyclistic bikes more during summer, in the months of June, July and August, and usage drops gradually following the autumn and winter months of September to February, and numbers rise again during the spring months, from March to May.
 
 Lastly, we will visualize the hourly use (24-hour format) of Cyclistic bikes by annual members and casual riders, side-by-side, for each day of the week utilizing the following code chunk.
 ```TSQL
@@ -398,6 +418,7 @@ ggsave("Hourly_use_of_bikes_throughout_the_week.png", dpi = 1000)
 The following output is recorded:
 ![Hourly_use_of_bikes_throughout_the_week](https://github.com/JohnLeGreat/data_analytics_case_study/assets/159614115/51ca9d85-495a-4bda-afeb-013f9cf8bb0c)
 
+From the bar graph, we can see that Annual members tend to be the bigger group utilizing Cyclistic Bikes for longer durations on weekdays, whereas Casual Riders tend to the bigger group utilizing Cyclistic bikes for longer durations on weekends.
 
 ## Present your Findings
 
