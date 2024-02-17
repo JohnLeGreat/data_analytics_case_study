@@ -418,14 +418,26 @@ ggsave("Hourly_use_of_bikes_throughout_the_week.png", dpi = 1000)
 The following output is recorded:
 ![Hourly_use_of_bikes_throughout_the_week](https://github.com/JohnLeGreat/data_analytics_case_study/assets/159614115/51ca9d85-495a-4bda-afeb-013f9cf8bb0c)
 
-From the bar graph, we can see that Annual members tend to be the bigger group utilizing Cyclistic Bikes for longer durations on weekdays, whereas Casual Riders tend to the bigger group utilizing Cyclistic bikes for longer durations on weekends.
+From the bar graph, we can see that Annual members tend to be the bigger group utilizing Cyclistic Bikes for longer durations on weekdays, whereas Casual riders tend to the bigger group utilizing Cyclistic bikes for longer durations on weekends.
 
 ## Present your Findings
 
+My findings were as follows:
+1. The number of Annual members to Casual riders of Cyclistic Bikes were roughly in a ratio of 2:1.
+2. Casual riders tend to utilize Cyclistic bikes more on the weekends whereas Annual members tend to use them more on weekdays.
+3. The use of Cyclistic bikes rise during the spring months (March-May) and peak during the summer months(June-August), and drop during the autumn and winter months (September-February).
+4. Annual members tend to use Cyclistic bikes for longer periods of time during the weekdays, whereas Casual riders tend to use Cyclistic bikes for longer periods of time during the weekends.
+
 ## Ensure your Work is Accessible
+
+Documentation of my work is fully accessible on Github.com.
 
 # Act
 
+## Answering the Business Question
+From the data, we can see that Annual members tend to utilize Cyclistic bikes more for work-related purposes, as evident by their longer and more frequent usage during the weekdays; Casual members tend to use Cyclistic bikes more for sightseeing and travelling purposes, as evident by their peak usage during the weekends (Saturday and Sunday).
+
+For devising a marketing strategy, focused advertisement campaigns can be considered done on the most popular stations (XX) during 1. the afternoon hours (12 - 4 pm), 2. the weekends (Saturday & Sunday) and/or 2. the summer months (June-August), where numbers of Casual riders peak.
 ## Create your Portfolio
 
 ## Add your Case Study
